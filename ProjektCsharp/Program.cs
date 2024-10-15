@@ -1,5 +1,5 @@
 namespace ProjektCsharp
-{ //Git test ifall det fungerar
+{ 
     internal static class Program
     {
         /// <summary>
