@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\stina\\source\\repos\\ProjektCsharp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8DF005AA-0F89-4CB8-A588-D66F84A633D1}|ProjektCsharp\\ProjektCsharp.csproj|c:\\users\\stina\\source\\repos\\projektcsharp\\projektcsharp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8DF005AA-0F89-4CB8-A588-D66F84A633D1}|ProjektCsharp\\ProjektCsharp.csproj|solutionrelative:projektcsharp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\stina\\source\\repos\\ProjektCsharp\\ProjektCsharp\\Form1.cs",
+              "RelativeDocumentMoniker": "ProjektCsharp\\Form1.cs",
+              "ToolTip": "C:\\Users\\stina\\source\\repos\\ProjektCsharp\\ProjektCsharp\\Form1.cs [Design]",
+              "RelativeToolTip": "ProjektCsharp\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T08:22:41.07Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
