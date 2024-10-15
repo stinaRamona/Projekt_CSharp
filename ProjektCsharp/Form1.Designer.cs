@@ -1,6 +1,6 @@
 ﻿namespace ProjektCsharp
 {
-    partial class pong
+    partial class Pong
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             player1 = new PictureBox();
             Computer = new PictureBox();
             ball = new PictureBox();
             playerScore = new Label();
             cpuScore = new Label();
+            pongTimer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)player1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Computer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ball).BeginInit();
@@ -85,7 +87,11 @@
             cpuScore.TabIndex = 4;
             cpuScore.Text = "0";
             // 
-            // pong
+            // pongTimer
+            // 
+            pongTimer.Tick += pongTimer_Tick;
+            // 
+            // Pong
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -97,7 +103,7 @@
             Controls.Add(Computer);
             Controls.Add(player1);
             DoubleBuffered = true;
-            Name = "pong";
+            Name = "Pong";
             Text = "Pong";
             Load += Form1_Load;
             KeyDown += KeyIsDown;
@@ -116,5 +122,6 @@
         private PictureBox ball;
         private Label playerScore;
         private Label cpuScore;
+        private System.Windows.Forms.Timer pongTimer;
     }
 }

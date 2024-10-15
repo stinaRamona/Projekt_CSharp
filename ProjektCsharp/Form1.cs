@@ -1,8 +1,8 @@
 namespace ProjektCsharp
 {
-    public partial class pong : Form
+    public partial class Pong : Form
     {
-        public pong()
+        public Pong()
         {
             InitializeComponent();
         }
@@ -35,6 +35,11 @@ namespace ProjektCsharp
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pongTimer_Tick(object sender, EventArgs e)
+        {
+            //Kod som körs medan timer är igång (alltså typ hela spelet)
         }
     }
 }
