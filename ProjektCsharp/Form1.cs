@@ -1,8 +1,8 @@
 namespace ProjektCsharp
 {
-    public partial class Player : Form
+    public partial class pong : Form
     {
-        public Player()
+        public pong()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace ProjektCsharp
         private void KeyIsUp(object sender, KeyEventArgs e)
         {
             //när man släpper
-        } 
+        }
 
         private void CheckCollision(PictureBox PicOne, PictureBox PicTwo, int offset)
         {
@@ -30,6 +30,11 @@ namespace ProjektCsharp
         private void GameOver(string message)
         {
             //När antingen spelaren eller datorn vinner
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

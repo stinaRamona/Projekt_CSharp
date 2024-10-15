@@ -1,6 +1,6 @@
 ﻿namespace ProjektCsharp
 {
-    partial class Player
+    partial class pong
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,66 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            player1 = new PictureBox();
             Computer = new PictureBox();
             ball = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            playerScore = new Label();
+            cpuScore = new Label();
+            ((System.ComponentModel.ISupportInitialize)player1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Computer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ball).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // player1
             // 
-            pictureBox1.BackColor = Color.White;
-            pictureBox1.Location = new Point(12, 155);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(30, 120);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            player1.BackColor = Color.White;
+            player1.Location = new Point(12, 155);
+            player1.Name = "player1";
+            player1.Size = new Size(20, 120);
+            player1.TabIndex = 0;
+            player1.TabStop = false;
             // 
             // Computer
             // 
-            Computer.BackColor = Color.Red;
-            Computer.Location = new Point(680, 155);
+            Computer.BackColor = Color.Gray;
+            Computer.Location = new Point(768, 155);
             Computer.Name = "Computer";
-            Computer.Size = new Size(30, 120);
+            Computer.Size = new Size(20, 120);
             Computer.TabIndex = 1;
             Computer.TabStop = false;
             // 
             // ball
             // 
             ball.BackColor = Color.Black;
-            ball.Location = new Point(365, 347);
+            ball.Location = new Point(386, 202);
             ball.Name = "ball";
-            ball.Size = new Size(30, 30);
+            ball.Size = new Size(25, 25);
             ball.TabIndex = 2;
             ball.TabStop = false;
             // 
-            // Player
+            // playerScore
+            // 
+            playerScore.AutoSize = true;
+            playerScore.Font = new Font("MS Reference Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            playerScore.Location = new Point(194, 9);
+            playerScore.Name = "playerScore";
+            playerScore.Size = new Size(33, 34);
+            playerScore.TabIndex = 3;
+            playerScore.Text = "0";
+            // 
+            // cpuScore
+            // 
+            cpuScore.AutoSize = true;
+            cpuScore.Font = new Font("MS Reference Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cpuScore.Location = new Point(586, 9);
+            cpuScore.Name = "cpuScore";
+            cpuScore.Size = new Size(33, 34);
+            cpuScore.TabIndex = 4;
+            cpuScore.Text = "0";
+            // 
+            // pong
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGreen;
             ClientSize = new Size(800, 450);
+            Controls.Add(cpuScore);
+            Controls.Add(playerScore);
             Controls.Add(ball);
             Controls.Add(Computer);
-            Controls.Add(pictureBox1);
+            Controls.Add(player1);
             DoubleBuffered = true;
-            Name = "Player";
+            Name = "pong";
             Text = "Pong";
             Load += Form1_Load;
             KeyDown += KeyIsDown;
             KeyUp += KeyIsUp;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)player1).EndInit();
             ((System.ComponentModel.ISupportInitialize)Computer).EndInit();
             ((System.ComponentModel.ISupportInitialize)ball).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox player1;
         private PictureBox Computer;
         private PictureBox ball;
+        private Label playerScore;
+        private Label cpuScore;
     }
 }
