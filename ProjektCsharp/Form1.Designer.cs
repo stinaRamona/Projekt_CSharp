@@ -89,6 +89,7 @@
             // 
             // pongTimer
             // 
+            pongTimer.Enabled = true;
             pongTimer.Tick += pongTimer_Tick;
             // 
             // Pong

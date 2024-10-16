@@ -94,6 +94,30 @@ namespace ProjektCsharp
                 BallYCoordinate = -BallYCoordinate; 
             }
 
+            //Kontroll ifall bollen nuddar antingen spelarens racket eller datorns racket 
+            if(ball.Bounds.IntersectsWith(player1.Bounds) || ball.Bounds.IntersectsWith(Computer.Bounds))
+            {
+                //bollen åker i en annan riktning 
+                BallXCoordinate = -BallXCoordinate; 
+            }
+
+            //kontroll av spelarens rörelser uppåt
+            if(PlrDetectedUp == true && player1.Top > 0)
+            {
+                player1.Top -= 10; 
+            }
+
+            //kontroll av spelarens rörelser nedåt 
+            if(PlrDetectedDown == true && player1.Top < BottomBoundry)
+            {
+                player1.Top += 10; 
+            }
+            
+            //kontroll om det finns en vinnare 
+            if(PlayerScore >= 5)
+            {
+                pongTimer.Stop();
+            }
         }
     }
 }
