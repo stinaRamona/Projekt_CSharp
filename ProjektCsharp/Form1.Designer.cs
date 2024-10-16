@@ -103,7 +103,6 @@
             Controls.Add(ball);
             Controls.Add(Computer);
             Controls.Add(player1);
-            DoubleBuffered = true;
             Name = "Pong";
             Text = "Pong";
             Load += Form1_Load;

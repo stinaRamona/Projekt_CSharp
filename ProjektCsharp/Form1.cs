@@ -3,9 +3,9 @@ namespace ProjektCsharp
     public partial class Pong : Form
     {
         //Variabler för fart för datorn och bollen.
-        int ComputerDirection = 5;
-        int BallXCoordinate = 5;
-        int BallYCoordinate = 5;
+        int ComputerDirection = 10;
+        int BallXCoordinate = 15;
+        int BallYCoordinate = 15;
         //Variabler för att hålla koll på poäng 
         int PlayerScore = 0;
         int CpuScore = 0;
@@ -88,7 +88,7 @@ namespace ProjektCsharp
             }
 
             //Kontroll så att bollen är i sprlbanan 
-            if (ball.Top < 0 || ball.Top + Height > ClientSize.Height)
+            if (ball.Top < 0 || ball.Top + ball.Height > ClientSize.Height)
             {
                 //bollen går åt motsatt håll
                 BallYCoordinate = -BallYCoordinate;
