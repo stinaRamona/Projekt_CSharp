@@ -107,6 +107,8 @@
             Name = "Pong";
             Text = "Pong";
             Load += Form1_Load;
+            KeyDown += Pong_KeyDown;
+            KeyUp += Pong_KeyUp;
             ((System.ComponentModel.ISupportInitialize)player1).EndInit();
             ((System.ComponentModel.ISupportInitialize)Computer).EndInit();
             ((System.ComponentModel.ISupportInitialize)ball).EndInit();

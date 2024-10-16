@@ -26,7 +26,7 @@ namespace ProjektCsharp
             //gör så att man inte kan röra sig utanför spelbanan 
             BottomBoundry = ClientSize.Height - player1.Height;
             XMidpoint = ClientSize.Width / 2;
-            YMidpoint = ClientSize.Height / 2; 
+            YMidpoint = ClientSize.Height / 2;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -40,14 +40,14 @@ namespace ProjektCsharp
             //kod för var bollen kan fara
             Random NewBallSpot = new Random();
             int NewSpot = NewBallSpot.Next(100, ClientSize.Height - 100);
-           
+
             //kod för hur bollen rör sig 
             ball.Top -= BallYCoordinate;
             ball.Left -= BallXCoordinate;
-            
+
             //kod för att datorn ska kunna röra sig 
             Computer.Top += ComputerDirection;
-            
+
             //kolla om datorn har nått toppen eller botten av spelbanan 
             if (Computer.Top < 0 || Computer.Top > BottomBoundry)
             {
@@ -68,7 +68,7 @@ namespace ProjektCsharp
                 //Datorn får poäng... 
                 CpuScore++;
                 //... Och labeln på spelet uppdateras med det nya värdet
-                cpuScoreLabel.Text = CpuScore.ToString(); 
+                cpuScoreLabel.Text = CpuScore.ToString();
             }
 
             //kolla om spelaren har fått poäng 
@@ -88,36 +88,80 @@ namespace ProjektCsharp
             }
 
             //Kontroll så att bollen är i sprlbanan 
-            if(ball.Top < 0 || ball.Top + Height > ClientSize.Height)
+            if (ball.Top < 0 || ball.Top + Height > ClientSize.Height)
             {
                 //bollen går åt motsatt håll
-                BallYCoordinate = -BallYCoordinate; 
+                BallYCoordinate = -BallYCoordinate;
             }
 
             //Kontroll ifall bollen nuddar antingen spelarens racket eller datorns racket 
-            if(ball.Bounds.IntersectsWith(player1.Bounds) || ball.Bounds.IntersectsWith(Computer.Bounds))
+            if (ball.Bounds.IntersectsWith(player1.Bounds) || ball.Bounds.IntersectsWith(Computer.Bounds))
             {
                 //bollen åker i en annan riktning 
-                BallXCoordinate = -BallXCoordinate; 
+                BallXCoordinate = -BallXCoordinate;
             }
 
             //kontroll av spelarens rörelser uppåt
-            if(PlrDetectedUp == true && player1.Top > 0)
+            if (PlrDetectedUp == true && player1.Top > 0)
             {
-                player1.Top -= 10; 
+                player1.Top -= 10;
             }
 
             //kontroll av spelarens rörelser nedåt 
-            if(PlrDetectedDown == true && player1.Top < BottomBoundry)
+            if (PlrDetectedDown == true && player1.Top < BottomBoundry)
             {
-                player1.Top += 10; 
+                player1.Top += 10;
             }
-            
+
             //kontroll om det finns en vinnare 
-            if(PlayerScore >= 5)
+            if (PlayerScore >= 5)
             {
                 pongTimer.Stop();
             }
+        }
+
+        private void Pong_KeyUp(object sender, KeyEventArgs e)
+        {
+            //Om spelaren släpper på upp-knappen slutar racketen röra sig 
+            if (e.KeyCode == Keys.Up)
+            {
+                PlrDetectedUp = false;
+            }
+
+            //samma fast ner
+            if (e.KeyCode == Keys.Down)
+            {
+                PlrDetectedDown = false;
+            }
+        }
+
+        private void Pong_KeyDown(object sender, KeyEventArgs e)
+        {
+            //Om spelaren trycker på upp-knappen ska racketen skickas uppåt 
+            if(e.KeyCode == Keys.Up)
+            {
+                PlrDetectedUp = true; 
+            }
+
+            //Ner knappen så åker den neråt
+            if(e.KeyCode == Keys.Down)
+            {
+                PlrDetectedDown = true; 
+            }
+
+            //space bar gör att spelet pausas
+            if(e.KeyCode == Keys.Space)
+            {
+                if (SpaceBarClicked % 2 == 0)
+                {
+                    pongTimer.Stop(); 
+                }
+                else
+                {
+                    pongTimer.Start();
+                } 
+            }
+            SpaceBarClicked++;
         }
     }
 }
