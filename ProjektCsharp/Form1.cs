@@ -39,7 +39,60 @@ namespace ProjektCsharp
         {
             //kod för var bollen kan fara
             Random NewBallSpot = new Random();
-            int NewSpot = NewBallSpot.Next(100, ClientSize.Height - 100); 
+            int NewSpot = NewBallSpot.Next(100, ClientSize.Height - 100);
+           
+            //kod för hur bollen rör sig 
+            ball.Top -= BallYCoordinate;
+            ball.Left -= BallXCoordinate;
+            
+            //kod för att datorn ska kunna röra sig 
+            Computer.Top += ComputerDirection;
+            
+            //kolla om datorn har nått toppen eller botten av spelbanan 
+            if (Computer.Top < 0 || Computer.Top > BottomBoundry)
+            {
+                //Datorn rör sig åt det andra hållet 
+                ComputerDirection = -ComputerDirection;
+            }
+
+            //kolla om daton har fått poäng 
+            if (ball.Left < 0)
+            {
+                //bollen spanar i mitten av spelplanen, men på en random höjd
+                ball.Left = XMidpoint;
+                ball.Top = NewSpot;
+
+                //Bollen börjar röra sig åt andra hållet
+                BallXCoordinate = -BallXCoordinate;
+
+                //Datorn får poäng... 
+                CpuScore++;
+                //... Och labeln på spelet uppdateras med det nya värdet
+                cpuScoreLabel.Text = CpuScore.ToString(); 
+            }
+
+            //kolla om spelaren har fått poäng 
+            if (ball.Left + ball.Width > ClientSize.Width)
+            {
+                //bollen spanar i mitten av spelplanen, men på en random höjd
+                ball.Left = XMidpoint;
+                ball.Top = NewSpot;
+
+                //Bollen börjar röra sig åt andra hållet
+                BallXCoordinate = -BallXCoordinate;
+
+                //spelaren får poäng... 
+                PlayerScore++;
+                //... Och labeln på spelet uppdateras med det nya värdet
+                playerScoreLabel.Text = PlayerScore.ToString();
+            }
+
+            //Kontroll så att bollen är i sprlbanan 
+            if(ball.Top < 0 || ball.Top + Height > ClientSize.Height)
+            {
+                //bollen går åt motsatt håll
+                BallYCoordinate = -BallYCoordinate; 
+            }
 
         }
     }
