@@ -32,8 +32,8 @@
             player1 = new PictureBox();
             Computer = new PictureBox();
             ball = new PictureBox();
-            playerScore = new Label();
-            cpuScore = new Label();
+            playerScoreLabel = new Label();
+            cpuScoreLabel = new Label();
             pongTimer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)player1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Computer).BeginInit();
@@ -67,25 +67,25 @@
             ball.TabIndex = 2;
             ball.TabStop = false;
             // 
-            // playerScore
+            // playerScoreLabel
             // 
-            playerScore.AutoSize = true;
-            playerScore.Font = new Font("MS Reference Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            playerScore.Location = new Point(194, 9);
-            playerScore.Name = "playerScore";
-            playerScore.Size = new Size(33, 34);
-            playerScore.TabIndex = 3;
-            playerScore.Text = "0";
+            playerScoreLabel.AutoSize = true;
+            playerScoreLabel.Font = new Font("MS Reference Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            playerScoreLabel.Location = new Point(194, 9);
+            playerScoreLabel.Name = "playerScoreLabel";
+            playerScoreLabel.Size = new Size(33, 34);
+            playerScoreLabel.TabIndex = 3;
+            playerScoreLabel.Text = "0";
             // 
-            // cpuScore
+            // cpuScoreLabel
             // 
-            cpuScore.AutoSize = true;
-            cpuScore.Font = new Font("MS Reference Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cpuScore.Location = new Point(586, 9);
-            cpuScore.Name = "cpuScore";
-            cpuScore.Size = new Size(33, 34);
-            cpuScore.TabIndex = 4;
-            cpuScore.Text = "0";
+            cpuScoreLabel.AutoSize = true;
+            cpuScoreLabel.Font = new Font("MS Reference Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cpuScoreLabel.Location = new Point(586, 9);
+            cpuScoreLabel.Name = "cpuScoreLabel";
+            cpuScoreLabel.Size = new Size(33, 34);
+            cpuScoreLabel.TabIndex = 4;
+            cpuScoreLabel.Text = "0";
             // 
             // pongTimer
             // 
@@ -97,8 +97,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGreen;
             ClientSize = new Size(800, 450);
-            Controls.Add(cpuScore);
-            Controls.Add(playerScore);
+            Controls.Add(cpuScoreLabel);
+            Controls.Add(playerScoreLabel);
             Controls.Add(ball);
             Controls.Add(Computer);
             Controls.Add(player1);
@@ -106,8 +106,6 @@
             Name = "Pong";
             Text = "Pong";
             Load += Form1_Load;
-            KeyDown += KeyIsDown;
-            KeyUp += KeyIsUp;
             ((System.ComponentModel.ISupportInitialize)player1).EndInit();
             ((System.ComponentModel.ISupportInitialize)Computer).EndInit();
             ((System.ComponentModel.ISupportInitialize)ball).EndInit();
@@ -120,8 +118,8 @@
         private PictureBox player1;
         private PictureBox Computer;
         private PictureBox ball;
-        private Label playerScore;
-        private Label cpuScore;
+        private Label playerScoreLabel;
+        private Label cpuScoreLabel;
         private System.Windows.Forms.Timer pongTimer;
     }
 }
