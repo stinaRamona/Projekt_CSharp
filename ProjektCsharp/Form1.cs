@@ -27,12 +27,11 @@ namespace ProjektCsharp
             BottomBoundry = ClientSize.Height - player1.Height;
             XMidpoint = ClientSize.Width / 2;
             YMidpoint = ClientSize.Height / 2;
+
+            //gör så man inte ser den labeln förens någon vunnit 
+            WinnerLabel.Visible = false; 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         //Kod som körs medan timer är igång (alltså typ hela spelet)
         private void pongTimer_Tick(object sender, EventArgs e)
@@ -52,7 +51,7 @@ namespace ProjektCsharp
             if (PlayerScore > 1)
             {
                 //Gör så att datorn följer bollen inom begränsningarna av spelplanen 
-                Computer.Top = Math.Max(0, Math.Min(ball.Top + 30, BottomBoundry)); 
+                Computer.Top = Math.Max(0, Math.Min(ball.Top + 30, BottomBoundry));
             }
 
             //kolla om datorn har nått toppen eller botten av spelbanan 
@@ -120,9 +119,19 @@ namespace ProjektCsharp
                 player1.Top += 10;
             }
 
-            //kontroll om det finns en vinnare 
+            //kontroll om spelaren har vunnit 
             if (PlayerScore >= 5)
             {
+                WinnerLabel.Text = "Du vann!";
+                WinnerLabel.Visible = true; 
+                pongTimer.Stop();
+            }
+
+            //kontroll om datorn har vunnit 
+            if (CpuScore >= 5)
+            {
+                WinnerLabel.Text = "Datorn vann!";
+                WinnerLabel.Visible = true;
                 pongTimer.Stop();
             }
         }
@@ -145,28 +154,28 @@ namespace ProjektCsharp
         private void Pong_KeyDown(object sender, KeyEventArgs e)
         {
             //Om spelaren trycker på upp-knappen ska racketen skickas uppåt 
-            if(e.KeyCode == Keys.Up)
+            if (e.KeyCode == Keys.Up)
             {
-                PlrDetectedUp = true; 
+                PlrDetectedUp = true;
             }
 
             //Ner knappen så åker den neråt
-            if(e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.Down)
             {
-                PlrDetectedDown = true; 
+                PlrDetectedDown = true;
             }
 
             //space bar gör att spelet pausas
-            if(e.KeyCode == Keys.Space)
+            if (e.KeyCode == Keys.Space)
             {
                 if (SpaceBarClicked % 2 == 0)
                 {
-                    pongTimer.Stop(); 
+                    pongTimer.Stop();
                 }
                 else
                 {
                     pongTimer.Start();
-                } 
+                }
             }
             SpaceBarClicked++;
         }

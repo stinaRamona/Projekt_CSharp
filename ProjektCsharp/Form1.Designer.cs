@@ -35,9 +35,12 @@
             playerScoreLabel = new Label();
             cpuScoreLabel = new Label();
             pongTimer = new System.Windows.Forms.Timer(components);
+            pictureBox1 = new PictureBox();
+            WinnerLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)player1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Computer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ball).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // player1
@@ -92,25 +95,46 @@
             pongTimer.Enabled = true;
             pongTimer.Tick += pongTimer_Tick;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.White;
+            pictureBox1.Location = new Point(397, -1);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(14, 450);
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
+            // WinnerLabel
+            // 
+            WinnerLabel.AutoSize = true;
+            WinnerLabel.Font = new Font("Arial Narrow", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            WinnerLabel.Location = new Point(323, 86);
+            WinnerLabel.Name = "WinnerLabel";
+            WinnerLabel.Size = new Size(158, 57);
+            WinnerLabel.TabIndex = 6;
+            WinnerLabel.Text = "Winner";
+            // 
             // Pong
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGreen;
             ClientSize = new Size(800, 450);
+            Controls.Add(WinnerLabel);
             Controls.Add(cpuScoreLabel);
             Controls.Add(playerScoreLabel);
             Controls.Add(ball);
             Controls.Add(Computer);
             Controls.Add(player1);
+            Controls.Add(pictureBox1);
             Name = "Pong";
             Text = "Pong";
-            Load += Form1_Load;
             KeyDown += Pong_KeyDown;
             KeyUp += Pong_KeyUp;
             ((System.ComponentModel.ISupportInitialize)player1).EndInit();
             ((System.ComponentModel.ISupportInitialize)Computer).EndInit();
             ((System.ComponentModel.ISupportInitialize)ball).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -123,5 +147,7 @@
         private Label playerScoreLabel;
         private Label cpuScoreLabel;
         private System.Windows.Forms.Timer pongTimer;
+        private PictureBox pictureBox1;
+        private Label WinnerLabel;
     }
 }
