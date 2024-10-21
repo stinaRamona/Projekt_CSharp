@@ -3,7 +3,7 @@ namespace ProjektCsharp
     public partial class Pong : Form
     {
         //Variabler för fart för datorn och bollen.
-        int ComputerDirection = 10;
+        int ComputerDirection = 15;
         int BallXCoordinate = 15;
         int BallYCoordinate = 15;
         //Variabler för att hålla koll på poäng 
@@ -47,6 +47,13 @@ namespace ProjektCsharp
 
             //kod för att datorn ska kunna röra sig 
             Computer.Top += ComputerDirection;
+
+            //gör att datorn blir bättre om spelaren har 2 poäng eller fler  
+            if (PlayerScore > 1)
+            {
+                //Gör så att datorn följer bollen inom begränsningarna av spelplanen 
+                Computer.Top = Math.Max(0, Math.Min(ball.Top + 30, BottomBoundry)); 
+            }
 
             //kolla om datorn har nått toppen eller botten av spelbanan 
             if (Computer.Top < 0 || Computer.Top > BottomBoundry)
