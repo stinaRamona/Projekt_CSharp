@@ -29,7 +29,8 @@ namespace ProjektCsharp
             YMidpoint = ClientSize.Height / 2;
 
             //gör så man inte ser den labeln förens någon vunnit 
-            WinnerLabel.Visible = false; 
+            WinnerLabel.Visible = false;
+            ResetLabel.Visible = false; 
         }
 
 
@@ -120,18 +121,20 @@ namespace ProjektCsharp
             }
 
             //kontroll om spelaren har vunnit 
-            if (PlayerScore >= 5)
+            if (PlayerScore >= 1)
             {
-                WinnerLabel.Text = "Du vann!";
-                WinnerLabel.Visible = true; 
+                WinnerLabel.Text = "Grattis, du vann!";
+                WinnerLabel.Visible = true;
+                ResetLabel.Visible = true;
                 pongTimer.Stop();
             }
 
             //kontroll om datorn har vunnit 
-            if (CpuScore >= 5)
+            if (CpuScore >= 1)
             {
-                WinnerLabel.Text = "Datorn vann!";
+                WinnerLabel.Text = "Synd, datorn vann";
                 WinnerLabel.Visible = true;
+                ResetLabel.Visible = true; 
                 pongTimer.Stop();
             }
         }
@@ -168,16 +171,52 @@ namespace ProjektCsharp
             //space bar gör att spelet pausas
             if (e.KeyCode == Keys.Space)
             {
-                if (SpaceBarClicked % 2 == 0)
+                if(PlayerScore >= 1 || CpuScore >= 1)
                 {
-                    pongTimer.Stop();
+                    //om någon har vunnit kan man resetta med mellanslag
+                    ResetGame(); 
                 }
                 else
                 {
-                    pongTimer.Start();
+                    if (SpaceBarClicked % 2 == 0)
+                    {
+                        pongTimer.Stop();
+                    }
+                    else
+                    {
+                        pongTimer.Start();
+                    }
                 }
             }
             SpaceBarClicked++;
+        }
+
+        private void ResetGame()
+        {
+            //återställer poängen 
+            PlayerScore = 0;
+            CpuScore = 0;
+            playerScoreLabel.Text = "0";
+            cpuScoreLabel.Text = "0";
+
+            // Återställ bollens position
+            ball.Left = XMidpoint;
+            ball.Top = YMidpoint;
+
+            // Återställ spelarens och datorns positioner
+            player1.Top = YMidpoint - player1.Height / 2;
+            Computer.Top = YMidpoint - Computer.Height / 2;
+
+            // Återställ bollens hastighet
+            BallXCoordinate = 15;
+            BallYCoordinate = 15;
+
+            // Göm vinstmeddelandet
+            WinnerLabel.Visible = false;
+            ResetLabel.Visible = false; 
+
+            // Starta om spelet
+            pongTimer.Start();
         }
     }
 }

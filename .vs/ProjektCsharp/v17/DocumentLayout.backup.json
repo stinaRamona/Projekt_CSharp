@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{8DF005AA-0F89-4CB8-A588-D66F84A633D1}|ProjektCsharp\\ProjektCsharp.csproj|solutionrelative:projektcsharp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DF005AA-0F89-4CB8-A588-D66F84A633D1}|ProjektCsharp\\ProjektCsharp.csproj|c:\\users\\stina\\source\\repos\\projektcsharp\\projektcsharp\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DF005AA-0F89-4CB8-A588-D66F84A633D1}|ProjektCsharp\\ProjektCsharp.csproj|solutionrelative:projektcsharp\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8DF005AA-0F89-4CB8-A588-D66F84A633D1}|ProjektCsharp\\ProjektCsharp.csproj|C:\\Users\\stina\\source\\repos\\ProjektCsharp\\projektcsharp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{8DF005AA-0F89-4CB8-A588-D66F84A633D1}|ProjektCsharp\\ProjektCsharp.csproj|solutionrelative:projektcsharp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DF005AA-0F89-4CB8-A588-D66F84A633D1}|ProjektCsharp\\ProjektCsharp.csproj|c:\\users\\stina\\source\\repos\\projektcsharp\\projektcsharp\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DF005AA-0F89-4CB8-A588-D66F84A633D1}|ProjektCsharp\\ProjektCsharp.csproj|solutionrelative:projektcsharp\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,20 +26,20 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\stina\\source\\repos\\ProjektCsharp\\ProjektCsharp\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "ProjektCsharp\\Form1.Designer.cs",
               "ToolTip": "C:\\Users\\stina\\source\\repos\\ProjektCsharp\\ProjektCsharp\\Form1.Designer.cs",
               "RelativeToolTip": "ProjektCsharp\\Form1.Designer.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAIwHEAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAIwHIAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-16T08:16:15.649Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\stina\\source\\repos\\ProjektCsharp\\ProjektCsharp\\Form1.cs",
               "RelativeDocumentMoniker": "ProjektCsharp\\Form1.cs",
@@ -57,7 +57,7 @@
               "RelativeDocumentMoniker": "ProjektCsharp\\Form1.cs",
               "ToolTip": "C:\\Users\\stina\\source\\repos\\ProjektCsharp\\ProjektCsharp\\Form1.cs",
               "RelativeToolTip": "ProjektCsharp\\Form1.cs",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAwwK4AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAIwKwAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-15T08:25:26.512Z",
               "EditorCaption": ""

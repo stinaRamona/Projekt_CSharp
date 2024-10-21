@@ -37,6 +37,7 @@
             pongTimer = new System.Windows.Forms.Timer(components);
             pictureBox1 = new PictureBox();
             WinnerLabel = new Label();
+            ResetLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)player1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Computer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ball).BeginInit();
@@ -108,11 +109,21 @@
             // 
             WinnerLabel.AutoSize = true;
             WinnerLabel.Font = new Font("Arial Narrow", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            WinnerLabel.Location = new Point(323, 86);
+            WinnerLabel.Location = new Point(239, 67);
             WinnerLabel.Name = "WinnerLabel";
-            WinnerLabel.Size = new Size(158, 57);
+            WinnerLabel.Size = new Size(338, 57);
             WinnerLabel.TabIndex = 6;
-            WinnerLabel.Text = "Winner";
+            WinnerLabel.Text = "Grattis, du vann!";
+            // 
+            // ResetLabel
+            // 
+            ResetLabel.AutoSize = true;
+            ResetLabel.Font = new Font("Arial", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ResetLabel.Location = new Point(156, 124);
+            ResetLabel.Name = "ResetLabel";
+            ResetLabel.Size = new Size(508, 32);
+            ResetLabel.TabIndex = 7;
+            ResetLabel.Text = "Tryck på mellanslag för att spela igen";
             // 
             // Pong
             // 
@@ -120,6 +131,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGreen;
             ClientSize = new Size(800, 450);
+            Controls.Add(ResetLabel);
             Controls.Add(WinnerLabel);
             Controls.Add(cpuScoreLabel);
             Controls.Add(playerScoreLabel);
@@ -149,5 +161,6 @@
         private System.Windows.Forms.Timer pongTimer;
         private PictureBox pictureBox1;
         private Label WinnerLabel;
+        private Label ResetLabel;
     }
 }
