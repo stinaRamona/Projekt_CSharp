@@ -52,7 +52,7 @@ namespace ProjektCsharp
             if (PlayerScore > 1)
             {
                 //Gör så att datorn följer bollen inom begränsningarna av spelplanen 
-                Computer.Top = Math.Max(0, Math.Min(ball.Top + 30, BottomBoundry));
+                Computer.Top = Math.Max(0, Math.Min(ball.Top + 25, BottomBoundry));
             }
 
             //kolla om datorn har nått toppen eller botten av spelbanan 
@@ -121,7 +121,7 @@ namespace ProjektCsharp
             }
 
             //kontroll om spelaren har vunnit 
-            if (PlayerScore >= 1)
+            if (PlayerScore >= 5)
             {
                 WinnerLabel.Text = "Grattis, du vann!";
                 WinnerLabel.Visible = true;
@@ -130,7 +130,7 @@ namespace ProjektCsharp
             }
 
             //kontroll om datorn har vunnit 
-            if (CpuScore >= 1)
+            if (CpuScore >= 5)
             {
                 WinnerLabel.Text = "Synd, datorn vann";
                 WinnerLabel.Visible = true;
@@ -171,7 +171,7 @@ namespace ProjektCsharp
             //space bar gör att spelet pausas
             if (e.KeyCode == Keys.Space)
             {
-                if(PlayerScore >= 1 || CpuScore >= 1)
+                if(PlayerScore >= 5 || CpuScore >= 5)
                 {
                     //om någon har vunnit kan man resetta med mellanslag
                     ResetGame(); 
