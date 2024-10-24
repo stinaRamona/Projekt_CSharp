@@ -75,6 +75,7 @@
             // 
             playerScoreLabel.AutoSize = true;
             playerScoreLabel.Font = new Font("MS Reference Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            playerScoreLabel.ForeColor = Color.White;
             playerScoreLabel.Location = new Point(194, 9);
             playerScoreLabel.Name = "playerScoreLabel";
             playerScoreLabel.Size = new Size(33, 34);
@@ -85,6 +86,7 @@
             // 
             cpuScoreLabel.AutoSize = true;
             cpuScoreLabel.Font = new Font("MS Reference Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cpuScoreLabel.ForeColor = Color.White;
             cpuScoreLabel.Location = new Point(586, 9);
             cpuScoreLabel.Name = "cpuScoreLabel";
             cpuScoreLabel.Size = new Size(33, 34);
@@ -109,6 +111,7 @@
             // 
             WinnerLabel.AutoSize = true;
             WinnerLabel.Font = new Font("Arial Narrow", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            WinnerLabel.ForeColor = Color.White;
             WinnerLabel.Location = new Point(239, 67);
             WinnerLabel.Name = "WinnerLabel";
             WinnerLabel.Size = new Size(338, 57);
@@ -119,6 +122,7 @@
             // 
             ResetLabel.AutoSize = true;
             ResetLabel.Font = new Font("Arial", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ResetLabel.ForeColor = Color.White;
             ResetLabel.Location = new Point(156, 124);
             ResetLabel.Name = "ResetLabel";
             ResetLabel.Size = new Size(508, 32);
