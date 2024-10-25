@@ -46,25 +46,31 @@
             // 
             // player1
             // 
-            player1.BackColor = Color.White;
+            player1.BackColor = Color.Transparent;
+            player1.BackgroundImage = Properties.Resources.racketpng;
+            player1.BackgroundImageLayout = ImageLayout.Stretch;
             player1.Location = new Point(12, 155);
             player1.Name = "player1";
-            player1.Size = new Size(20, 120);
+            player1.Size = new Size(40, 120);
             player1.TabIndex = 0;
             player1.TabStop = false;
             // 
             // Computer
             // 
-            Computer.BackColor = Color.Gray;
-            Computer.Location = new Point(768, 155);
+            Computer.BackColor = Color.Transparent;
+            Computer.BackgroundImage = Properties.Resources.Cpuracketpng;
+            Computer.BackgroundImageLayout = ImageLayout.Stretch;
+            Computer.Location = new Point(748, 155);
             Computer.Name = "Computer";
-            Computer.Size = new Size(20, 120);
+            Computer.Size = new Size(40, 120);
             Computer.TabIndex = 1;
             Computer.TabStop = false;
             // 
             // ball
             // 
-            ball.BackColor = Color.Black;
+            ball.BackColor = Color.Transparent;
+            ball.BackgroundImage = Properties.Resources.boll2;
+            ball.BackgroundImageLayout = ImageLayout.Stretch;
             ball.Location = new Point(386, 202);
             ball.Name = "ball";
             ball.Size = new Size(25, 25);
